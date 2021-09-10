@@ -4,7 +4,9 @@ package com.telefonica.queryclient.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 
@@ -25,8 +27,9 @@ public class Ofert {
     @Column(name="description")
     private String description;
     @Column(name="begin_date")
-    private String beginDate;
+    private Timestamp beginDate;
     @Column(name="end_date")
-    private Long endDate;
+    private Timestamp endDate;
+
 
 }

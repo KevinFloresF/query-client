@@ -28,7 +28,7 @@ public class Client {
     @Column(name="datebirth")
     private String datebirth;
 
-    @ManyToMany(cascade = CascadeType.DETACH)
-   @JoinColumn(name = "mobileId")
+    @OneToMany(cascade = CascadeType.DETACH, orphanRemoval = false)
+   @JoinColumn(name = "clientFk")
    private List<Mobile> mobiles;
 }

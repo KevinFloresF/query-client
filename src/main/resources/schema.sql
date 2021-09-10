@@ -16,22 +16,16 @@ CREATE TABLE Plan (
     state   VARCHAR(64) ,
     type     VARCHAR(64),
     planFk NUMBER,
-    FOREIGN KEY(planFk) references plan(planId));
-
+    clientFk NUMBER,
+    FOREIGN KEY(planFk) references Plan(planId),
+    FOREIGN KEY(clientFk) references Client(clientid));
 
 CREATE TABLE Ofert (
   OfertId    NUMBER PRIMARY KEY ,
   code     VARCHAR(64) ,
   description   VARCHAR(64) ,
-  begin_date    VARCHAR(64),
-  end_date  VARCHAR(64));
-
-  CREATE TABLE Client_Mobile (
-clientFk NUMBER,
-mobileFk NUMBER,
-  FOREIGN KEY(clientFk) references Client(clientId),
-    FOREIGN KEY(mobileFk) references Mobile(mobileId));
-
+  begin_date    TIMESTAMP,
+  end_date  TIMESTAMP);
 
   CREATE TABLE Ofert_Mobile (
 mobileFk NUMBER,

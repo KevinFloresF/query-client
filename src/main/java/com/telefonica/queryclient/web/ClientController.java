@@ -2,27 +2,26 @@ package com.telefonica.queryclient.web;
 
 import com.telefonica.queryclient.business.ClientService;
 import com.telefonica.queryclient.model.dto.MobileDTO;
-import com.telefonica.queryclient.model.dto.Request.Request;
-import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import com.telefonica.queryclient.model.dto.Request.FindMobileRequest;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.net.UnknownHostException;
 import java.util.List;
 
 @RestController
 @RequestMapping
+@RequiredArgsConstructor
 public class ClientController {
 
-    @Autowired
-    private ClientService clientservice;
 
-    @PostMapping
-    public List<MobileDTO> getMobilesList(@RequestBody Request request) {
+    private final ClientService clientservice;
 
-        return clientservice.consultarClient(request);
+    @GetMapping(value = "/buscar", produces = (MediaType.APPLICATION_JSON_VALUE))
+    public List<MobileDTO> getMobilesList(FindMobileRequest findMobileRequest) {
+
+        return clientservice.findClient(findMobileRequest);
+
     }
 
 }

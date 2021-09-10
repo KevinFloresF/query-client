@@ -2,18 +2,13 @@ package com.telefonica.queryclient.business.impl;
 
 import com.telefonica.queryclient.assembler.Assembler;
 import com.telefonica.queryclient.business.ClientService;
-import com.telefonica.queryclient.model.dto.ClientDTO;
 import com.telefonica.queryclient.model.dto.MobileDTO;
-import com.telefonica.queryclient.model.dto.OferTDTO;
-import com.telefonica.queryclient.model.dto.Request.Request;
-import com.telefonica.queryclient.model.dto.Response.Response;
-import com.telefonica.queryclient.model.entity.Mobile;
+import com.telefonica.queryclient.model.dto.Request.FindMobileRequest;
 import com.telefonica.queryclient.repository.ClientRepository;
 import com.telefonica.queryclient.repository.MobileRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,22 +23,22 @@ public class ClientServiceImpl implements ClientService {
 
 
     @Override
-    public List<MobileDTO> consultarClient(Request request){
+    public List<MobileDTO> findClient(FindMobileRequest findMobileRequest){
 
-        List<MobileDTO> mobiles = mobileRepository.findByTypedocumentAndNumberDocument(request.getTypeDocument(), request.getNumberDocument()).
+        return mobileRepository.findByTypedocumentAndNumberDocument(findMobileRequest.getTypeDocument(), findMobileRequest.getNumberDocument()).
                 stream().map(x -> Assembler.mapMobileToMobileDTO(x)).collect(Collectors.toList());
-        return mobiles ;
+
 
 //        Response resp = new Response();
 //        List<MobileDTO> mobilesResp = new ArrayList<>();
 //
-//        ClientDTO clientResp = clientRepository.findByTypeDocumentAndNumberDocument(request.getTypeDocument(), request.getNumberDocument()).
+//        ClientDTO clientResp = clientRepository.findByTypeDocumentAndNumberDocument(findMobileRequest.getTypeDocument(), findMobileRequest.getNumberDocument()).
 //                stream().map(x -> Assembler.mapClientToClientDTO(x)).findFirst().orElse(null);
 //
-//        List<MobileDTO> mobiles = mobileRepository.findByTypedocumentAndNumberDocument(request.getTypeDocument(), request.getNumberDocument()).
+//        List<MobileDTO> mobiles = mobileRepository.findByTypedocumentAndNumberDocument(findMobileRequest.getTypeDocument(), findMobileRequest.getNumberDocument()).
 //                stream().map(x -> Assembler.mapMobileToMobileDTO(x)).collect(Collectors.toList());
 //
-//        List<OferTDTO> ofertList = new ArrayList<>();
+//        List<OfertDTO> ofertList = new ArrayList<>();
 //
 //        for (MobileDTO movil :  mobiles) {
 //            MobileDTO mv = new MobileDTO();

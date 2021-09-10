@@ -1,6 +1,7 @@
 package com.telefonica.queryclient.model.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,16 +22,24 @@ public class Mobile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="number")
-    private  String number;
+   private  String number;
     @Column(name="state")
     private String status;
     @Column(name="type")
     private String type;
-    @Column(name="planFK")
-    private Long planName;
+
+    @OneToOne(cascade = CascadeType.DETACH, orphanRemoval = false)
+    @JoinColumn(name="planFK")
+    private Plan plan;
+
+    @OneToOne(cascade = CascadeType.DETACH, orphanRemoval = false)
+    @JoinColumn(name="clientFk")
+    private Client client;
 
     @ManyToMany(cascade = CascadeType.DETACH )
-    @JoinColumn(name = "ofertId")
+    @JoinTable(name = "Ofert_Mobile",
+        joinColumns = @JoinColumn(name = "ofertFk"),
+        inverseJoinColumns = @JoinColumn(name = "mobileFk"))
    private List<Ofert> oferts;
 
 

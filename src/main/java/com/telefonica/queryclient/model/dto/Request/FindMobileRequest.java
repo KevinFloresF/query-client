@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 
 
-public class Request {
+public class FindMobileRequest {
 
     private String typeDocument;
     private String numberDocument;

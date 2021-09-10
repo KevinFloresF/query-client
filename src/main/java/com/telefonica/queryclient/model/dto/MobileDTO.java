@@ -17,7 +17,7 @@ public class MobileDTO {
     private String number;
     private String status;
     private String type;
-    private Long planName;
-    private List<OferTDTO> ofertList;
+    private PlanDTO planDTO;
+    private List<OfertDTO> ofertList;
 
 }
