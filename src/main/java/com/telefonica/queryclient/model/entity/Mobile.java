@@ -7,26 +7,31 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
+
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Table(name = "Mobile")
 public class Mobile {
 
     @Id
+    @Column(name = "mobileId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private  Integer number;
-    private boolean status;
+    @Column(name="number")
+    private  String number;
+    @Column(name="state")
+    private String status;
+    @Column(name="type")
     private String type;
-    private String planName;
+    @Column(name="planFK")
+    private Long planName;
 
-    @ManyToOne(cascade = CascadeType.DETACH, optional = false )
-    @JoinColumn(name = "offer_id")
-    private List<Offer> offers;
+    @ManyToMany(cascade = CascadeType.DETACH )
+    @JoinColumn(name = "ofertId")
+   private List<Ofert> oferts;
 
 
 }

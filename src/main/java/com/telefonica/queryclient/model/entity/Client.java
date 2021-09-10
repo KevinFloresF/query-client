@@ -7,27 +7,28 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Table(name = "Client")
 public class Client {
 
     @Id
+    @Column(name = "clientId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idClient;
     @Column (name="name")
     private String name;
-    @Column(name="asd")
-    private String documentType;
-    @Column(name="asd")
-    private Long DocumentNum;
-    @Column(name="asd")
-    private Date Birthdate;
-    @OneToMany(cascade = CascadeType.DETACH, orphanRemoval = false)
-    @JoinColumn(name = "mobile_id")
-    private List<Mobile> mobiles;
+    @Column(name="type_document")
+    private String typeDocument;
+    @Column(name="number_document")
+    private String numberDocument;
+    @Column(name="datebirth")
+    private String datebirth;
+
+    @ManyToMany(cascade = CascadeType.DETACH)
+   @JoinColumn(name = "mobileId")
+   private List<Mobile> mobiles;
 }

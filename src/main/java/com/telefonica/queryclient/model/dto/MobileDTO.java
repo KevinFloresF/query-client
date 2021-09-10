@@ -3,6 +3,7 @@ package com.telefonica.queryclient.model.dto;
 import com.telefonica.queryclient.model.entity.Client;
 import lombok.*;
 
+import javax.persistence.Column;
 import java.util.List;
 
 @Getter
@@ -10,13 +11,13 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MobileResponseDTO {
+public class MobileDTO {
 
     private Long id;
-    private  Integer number;
-    private boolean status;
+    private String number;
+    private String status;
     private String type;
-    private String planName;
-    private List<Client> clients;
+    private Long planName;
+    private List<OferTDTO> ofertList;
 
 }
