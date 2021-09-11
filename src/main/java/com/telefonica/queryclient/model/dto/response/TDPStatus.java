@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class ClientStatus {
+public class TDPStatus {
 
     private String code;
     private String message;

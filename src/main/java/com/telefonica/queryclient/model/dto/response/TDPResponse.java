@@ -10,13 +10,13 @@ import java.io.Serializable;
 @Data
 @Builder
 @AllArgsConstructor
-public class ClientResponse <C> implements Serializable {
+public class TDPResponse<C> implements Serializable {
 
     public static long serialVersionUID = ClientConstants.SERIAL_VERSION;
 
-    private ClientStatus status;
+    private TDPStatus status;
     private C data;
 
-    public ClientResponse(ClientStatus status){
+    public TDPResponse(TDPStatus status){
         this.status = status;}
 }
