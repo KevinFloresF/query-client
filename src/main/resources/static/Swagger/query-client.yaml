@@ -45,7 +45,7 @@ paths:
         '200':
           description: OK
           schema:
-            type: object
+            $ref: '#/definitions/TDPResponse_List_MobileDTO'
         '401':
           description: Unauthorized
         '403':
@@ -84,7 +84,7 @@ paths:
         '200':
           description: OK
           schema:
-            type: object
+            $ref: '#/definitions/TDPResponse_List_ClientDTO'
         '401':
           description: Unauthorized
         '403':
@@ -92,3 +92,99 @@ paths:
         '404':
           description: Not Found
       deprecated: false
+definitions:
+  ClientDTO:
+    type: object
+    properties:
+      datebirth:
+        type: string
+      idClient:
+        type: integer
+        format: int64
+      mobileList:
+        type: array
+        items:
+          $ref: '#/definitions/MobileDTO'
+      name:
+        type: string
+      numberDocument:
+        type: string
+      typeDocument:
+        type: string
+    title: ClientDTO
+  MobileDTO:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      number:
+        type: string
+      ofertList:
+        type: array
+        items:
+          $ref: '#/definitions/OfertDTO'
+      planDTO:
+        $ref: '#/definitions/PlanDTO'
+      status:
+        type: boolean
+      type:
+        type: string
+    title: MobileDTO
+  OfertDTO:
+    type: object
+    properties:
+      beginDate:
+        type: string
+        format: date-time
+      code:
+        type: string
+      description:
+        type: string
+      endDate:
+        type: string
+        format: date-time
+      id:
+        type: integer
+        format: int64
+    title: OfertDTO
+  PlanDTO:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+      price:
+        type: number
+        format: double
+    title: PlanDTO
+  TDPResponse_List_ClientDTO:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/ClientDTO'
+      status:
+        $ref: '#/definitions/TDPStatus'
+    title: TDPResponse_List_ClientDTO
+  TDPResponse_List_MobileDTO:
+    type: object
+    properties:
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/MobileDTO'
+      status:
+        $ref: '#/definitions/TDPStatus'
+    title: TDPResponse_List_MobileDTO
+  TDPStatus:
+    type: object
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    title: TDPStatus

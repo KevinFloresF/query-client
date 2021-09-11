@@ -21,7 +21,7 @@ CREATE TABLE Plan (
     FOREIGN KEY(clientFk) references Client(clientid));
 
 CREATE TABLE Ofert (
-  OfertId    NUMBER PRIMARY KEY ,
+  ofertId    NUMBER PRIMARY KEY ,
   code     VARCHAR(64) ,
   description   VARCHAR(64) ,
   begin_date    TIMESTAMP,

@@ -15,7 +15,6 @@ public interface MobileRepository  extends JpaRepository<Mobile,Long> {
           "INNER JOIN CLIENT C ON C.CLIENTID = M.CLIENTFK " +
             " WHERE " +
             "C.TYPE_DOCUMENT = ?1 AND C.NUMBER_DOCUMENT = ?2 ",nativeQuery = true)
-
 public List<Mobile> findByTypedocumentAndNumberDocument(String typedocument, String numberDocument);
 
 }

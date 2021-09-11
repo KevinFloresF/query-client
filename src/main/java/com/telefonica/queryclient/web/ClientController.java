@@ -22,16 +22,13 @@ public class ClientController {
 
     @GetMapping(value = "/buscar", produces = (MediaType.APPLICATION_JSON_VALUE))
 
-    public ResponseEntity<?> getMobilesList(ClientRequest clientRequest) {
-
+    public ResponseEntity<TDPResponse<List<MobileDTO>>> getMobilesList(ClientRequest clientRequest) {
         List<MobileDTO> clients = clientservice.findClient(clientRequest);
         TDPResponse<List<MobileDTO>> response = new TDPResponse<List<MobileDTO>>(TDPStatusEnum.OK.getStatus(), clients);
         return ResponseEntity.ok().body(response);
-
-
     }
     @GetMapping(value = "/buscarFecha", produces = (MediaType.APPLICATION_JSON_VALUE))
-    public ResponseEntity<?> getClientsByDate(ClientRequest clientRequest) {
+    public ResponseEntity<TDPResponse<List<ClientDTO>>> getClientsByDate(ClientRequest clientRequest) {
 
         List<ClientDTO> clients = clientservice.findClientsByDate(clientRequest);
         TDPResponse<List<ClientDTO>> response = new TDPResponse<List<ClientDTO>>(TDPStatusEnum.OK.getStatus(), clients);
