@@ -37,7 +37,7 @@ public class ClientServiceImpl implements ClientService {
 
 
     @Override
-    @Cacheable(value = "findByTypeDocAndNumDoc",keyGenerator = "customKeyGenerator",  unless = "#result.size()==1")
+    @Cacheable(value = "findByTypeDocAndNumDoc",keyGenerator = "customKeyGenerator",  unless = "#result.size()>1")
     public List<MobileDTO> findClient(ClientRequest clientRequest){
         LOG.info("Find Client by Type Doc and Number Document of {}", clientRequest.toString());
         return mobileRepository.findByTypedocumentAndNumberDocument(clientRequest.getTypeDocument(), clientRequest.getNumberDocument()).
@@ -46,7 +46,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    @Cacheable (value = "findClientsByDate",keyGenerator = "customKeyGenerator",  unless = "#result.size()==1")
+    @Cacheable (value = "findClientsByDate",keyGenerator = "customKeyGenerator",  unless = "#result.size()>1")
     public List<ClientDTO> findClientsByDate(ClientRequest clientRequest) {
         LOG.info("Find Client By Dates {}", clientRequest.toString());
 
@@ -66,6 +66,7 @@ public class ClientServiceImpl implements ClientService {
 
                     return client;
                 })
+                // Guardar las ofertas de los clientes que tengan el invervalo
                 .map(client -> {
                     List<Mobile> mobiles = client.getMobiles();
                     mobiles.forEach(mobile -> {

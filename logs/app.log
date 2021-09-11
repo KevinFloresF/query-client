@@ -2695,3 +2695,14 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2021-09-10 20:30:26 INFO  No active profile set, falling back to default profiles: default
 2021-09-10 20:30:29 INFO  Started QueryClientApplication in 4.326 seconds (JVM running for 5.469)
 2021-09-10 20:30:35 INFO  Find Client By Dates ClientRequest(typeDocument=null, numberDocument=null, beginDate=2021-09-10 00:00:00.0, endDate=2021-10-01 00:00:00.0)
+2021-09-10 20:34:16 INFO  Find Client By Dates ClientRequest(typeDocument=null, numberDocument=null, beginDate=2021-09-10 00:00:00.0, endDate=2021-10-01 00:00:00.0)
+2021-09-10 20:34:28 INFO  Find Client By Dates ClientRequest(typeDocument=null, numberDocument=null, beginDate=2021-09-10 00:00:00.0, endDate=2021-10-01 00:00:00.0)
+2021-09-10 20:35:54 INFO  Starting QueryClientApplication using Java 16.0.2 on SNIPER-PC with PID 17256 (D:\Workplace_Training_Sinopsys\Entrevista prueba\query-client\target\classes started by SNIPER in D:\Workplace_Training_Sinopsys\Entrevista prueba\query-client)
+2021-09-10 20:35:54 DEBUG Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-10 20:35:54 INFO  No active profile set, falling back to default profiles: default
+2021-09-10 20:35:59 INFO  Started QueryClientApplication in 5.013 seconds (JVM running for 6.181)
+2021-09-10 20:36:00 INFO  Find Client By Dates ClientRequest(typeDocument=null, numberDocument=null, beginDate=2021-09-10 00:00:00.0, endDate=2021-10-01 00:00:00.0)
+2021-09-10 20:50:27 INFO  Starting QueryClientApplication using Java 16.0.2 on SNIPER-PC with PID 11756 (D:\Workplace_Training_Sinopsys\Entrevista prueba\query-client\target\classes started by SNIPER in D:\Workplace_Training_Sinopsys\Entrevista prueba\query-client)
+2021-09-10 20:50:27 DEBUG Running with Spring Boot v2.5.4, Spring v5.3.9
+2021-09-10 20:50:27 INFO  No active profile set, falling back to default profiles: default
+2021-09-10 20:50:33 INFO  Started QueryClientApplication in 6.964 seconds (JVM running for 8.373)
