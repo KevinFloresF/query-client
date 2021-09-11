@@ -27,9 +27,9 @@ public class Ofert {
     @Column(name="description")
     private String description;
     @Column(name="begin_date")
-    private Timestamp beginDate;
+    private Date beginDate;
     @Column(name="end_date")
-    private Timestamp endDate;
+    private Date endDate;
 
 
 }

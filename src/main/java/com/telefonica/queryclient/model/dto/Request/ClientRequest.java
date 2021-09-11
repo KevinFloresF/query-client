@@ -4,8 +4,8 @@ import com.telefonica.queryclient.util.ClientConstants;
 import lombok.*;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Data
 @Builder
@@ -20,8 +20,8 @@ public class ClientRequest implements Serializable {
     private String typeDocument;
     private String numberDocument;
 
-    private Timestamp beginDate;
-    private Timestamp endDate;
+    private Date beginDate;
+    private Date endDate;
 
 
 }

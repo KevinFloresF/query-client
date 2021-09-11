@@ -7,6 +7,7 @@ import lombok.*;
 import javax.persistence.Column;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -20,8 +21,8 @@ public class OfertDTO implements Serializable {
     private Long id;
     private  String code;
     private String description;
-    private Timestamp beginDate;
-    private Timestamp endDate;
+    private Date beginDate;
+    private Date endDate;
 
   public OfertDTO(Ofert ofert){
       this(ofert.getId(), ofert.getCode(),ofert.getDescription(),ofert.getBeginDate(),ofert.getEndDate());}
