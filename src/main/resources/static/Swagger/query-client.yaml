@@ -1,0 +1,94 @@
+swagger: '2.0'
+info:
+  description: Evaluation API Catalogue
+  version: '1.0'
+  title: Catalogue Service API
+  termsOfService: http://codmind.com/terms
+  contact:
+    name: Swag Evaluation
+    url: https://tdp.com/api/evaluation
+    email: apis@tdp.com
+host: localhost:8080
+basePath: /
+tags:
+  - name: client-controller
+    description: Client Controller
+paths:
+  /buscar:
+    get:
+      tags:
+        - client-controller
+      summary: getMobilesList
+      operationId: getMobilesListUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: beginDate
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: endDate
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: numberDocument
+          in: query
+          required: false
+          type: string
+        - name: typeDocument
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /buscarFecha:
+    get:
+      tags:
+        - client-controller
+      summary: getClientsByDate
+      operationId: getClientsByDateUsingGET
+      produces:
+        - application/json
+      parameters:
+        - name: beginDate
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: endDate
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: numberDocument
+          in: query
+          required: false
+          type: string
+        - name: typeDocument
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
