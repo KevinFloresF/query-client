@@ -1,6 +1,6 @@
 package com.telefonica.queryclient.enumeration;
 
-import com.telefonica.queryclient.model.dto.Response.ClientStatus;
+import com.telefonica.queryclient.model.dto.response.ClientStatus;
 import lombok.Getter;
 
 @Getter

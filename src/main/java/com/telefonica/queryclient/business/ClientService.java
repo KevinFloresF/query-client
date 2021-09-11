@@ -2,7 +2,7 @@ package com.telefonica.queryclient.business;
 
 import com.telefonica.queryclient.model.dto.ClientDTO;
 import com.telefonica.queryclient.model.dto.MobileDTO;
-import com.telefonica.queryclient.model.dto.Request.ClientRequest;
+import com.telefonica.queryclient.model.dto.request.ClientRequest;
 
 
 import java.util.List;

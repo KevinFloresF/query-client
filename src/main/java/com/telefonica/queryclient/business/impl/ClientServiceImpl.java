@@ -4,8 +4,7 @@ import com.telefonica.queryclient.assembler.Assembler;
 import com.telefonica.queryclient.business.ClientService;
 import com.telefonica.queryclient.model.dto.ClientDTO;
 import com.telefonica.queryclient.model.dto.MobileDTO;
-import com.telefonica.queryclient.model.dto.OfertDTO;
-import com.telefonica.queryclient.model.dto.Request.ClientRequest;
+import com.telefonica.queryclient.model.dto.request.ClientRequest;
 import com.telefonica.queryclient.model.entity.Client;
 import com.telefonica.queryclient.model.entity.Mobile;
 import com.telefonica.queryclient.model.entity.Ofert;
@@ -18,14 +17,15 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
 import java.util.*;
 import java.util.stream.Collectors;
 
 
 @Service
 @RequiredArgsConstructor
+
 public class ClientServiceImpl implements ClientService {
+
 
     private static final Logger LOG = LogManager.getLogger();
 

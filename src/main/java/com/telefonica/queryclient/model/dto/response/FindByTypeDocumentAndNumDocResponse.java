@@ -1,4 +1,4 @@
-package com.telefonica.queryclient.model.dto.Response;
+package com.telefonica.queryclient.model.dto.response;
 
 import com.telefonica.queryclient.model.dto.ClientDTO;
 

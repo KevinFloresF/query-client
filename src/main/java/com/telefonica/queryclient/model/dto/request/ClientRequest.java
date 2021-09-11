@@ -1,10 +1,9 @@
-package com.telefonica.queryclient.model.dto.Request;
+package com.telefonica.queryclient.model.dto.request;
 
 import com.telefonica.queryclient.util.ClientConstants;
 import lombok.*;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
