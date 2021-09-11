@@ -13,8 +13,6 @@ import java.util.List;
 public interface MobileRepository  extends JpaRepository<Mobile,Long> {
     @Query(value = "SELECT M.* FROM MOBILE M " +
           "INNER JOIN CLIENT C ON C.CLIENTID = M.CLIENTFK " +
-          //  "INNER JOIN OFERT_MOBILE OM ON OM.MOBILEFK = M.MOBILEID " +
-          //  "INNER JOIN OFERT O ON O.OFERTID = OM.OFERTFK " +
             " WHERE " +
             "C.TYPE_DOCUMENT = ?1 AND C.NUMBER_DOCUMENT = ?2 ",nativeQuery = true)
 

@@ -1,5 +1,6 @@
 package com.telefonica.queryclient.model.dto;
 
+import com.telefonica.queryclient.model.entity.Plan;
 import lombok.*;
 
 
@@ -10,8 +11,11 @@ import lombok.*;
 @AllArgsConstructor
 public class PlanDTO {
 
-    private String id;
+    private Long id;
     private String name;
     private Double price;
 
+    public PlanDTO(Plan plan) {
+        this(plan.getId(), plan.getName(), plan.getPrice());
+    }
 }

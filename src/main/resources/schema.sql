@@ -13,7 +13,7 @@ CREATE TABLE Plan (
   CREATE TABLE Mobile (
     mobileId    NUMBER PRIMARY KEY ,
     number     VARCHAR(64) ,
-    state   VARCHAR(64) ,
+    state   BIT ,
     type     VARCHAR(64),
     planFk NUMBER,
     clientFk NUMBER,

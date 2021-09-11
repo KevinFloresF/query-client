@@ -27,7 +27,7 @@ public class Assembler {
     public static MobileDTO mapMobileToMobileDTO(Mobile mobile) {
         return MobileDTO.builder()
                 .number(mobile.getNumber())
-                .status(mobile.getStatus())
+                .status(mobile.isStatus())
                 .type(mobile.getType())
                 .planDTO(Assembler.mapPlanToPlanDTO((mobile.getPlan())))
                 .ofertList(mobile.getOferts().stream().map(x -> Assembler.mapOfertToOfertDTO(x)).collect(Collectors.toList()))

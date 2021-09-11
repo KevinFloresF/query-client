@@ -24,7 +24,7 @@ public class Mobile {
     @Column(name="number")
    private  String number;
     @Column(name="state")
-    private String status;
+    private boolean status;
     @Column(name="type")
     private String type;
 
@@ -38,8 +38,8 @@ public class Mobile {
 
     @ManyToMany(cascade = CascadeType.DETACH )
     @JoinTable(name = "Ofert_Mobile",
-        joinColumns = @JoinColumn(name = "ofertFk"),
-        inverseJoinColumns = @JoinColumn(name = "mobileFk"))
+        joinColumns = @JoinColumn(name = "mobileFk"),
+        inverseJoinColumns = @JoinColumn(name = "ofertFk"))
    private List<Ofert> oferts;
 
 
